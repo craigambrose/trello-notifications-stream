@@ -22,6 +22,7 @@
     "nock": "^0.52.4"
   },
   "dependencies": {
-    "coffee-script": "^1.8.0"
+    "coffee-script": "^1.8.0",
+    "readable-stream": "^1.0.33"
   }
 }
