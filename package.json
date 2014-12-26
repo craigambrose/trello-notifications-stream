@@ -1,0 +1,27 @@
+{
+  "name": "glint-trello",
+  "version": "0.0.0",
+  "description": "Get activities from trello and pass them to glint",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --compilers coffee:coffee-script/register test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enspiral/glint-trello.git"
+  },
+  "author": "Craig Ambrose",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/enspiral/glint-trello/issues"
+  },
+  "homepage": "https://github.com/enspiral/glint-trello",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "nock": "^0.52.4"
+  },
+  "dependencies": {
+    "coffee-script": "^1.8.0"
+  }
+}
