@@ -1,8 +1,7 @@
 Readable = require('readable-stream').Readable
 
-class TrelloStream extends Readable
+class TrelloActivityStream extends Readable
   constructor: (options) ->
-
     options.objectMode = true
     super(options)
 
@@ -10,4 +9,4 @@ class TrelloStream extends Readable
     true
 
 module.exports = (options) ->
-  new TrelloStream(options)
+  new TrelloActivityStream(options)
