@@ -20,6 +20,7 @@
     "chai": "^1.10.0",
     "mocha": "^2.1.0",
     "nock": "^0.52.4",
+    "stdout": "0.0.3",
     "stream-array": "^1.0.1"
   },
   "dependencies": {
@@ -28,6 +29,8 @@
     "node-trello": "^1.0.1",
     "pauseable": "^0.1.2",
     "readable-stream": "^1.0.33",
-    "through2": "^0.6.3"
+    "streaming-poller": "0.0.1",
+    "through2": "^0.6.3",
+    "unique-stream": "^1.0.0"
   }
 }

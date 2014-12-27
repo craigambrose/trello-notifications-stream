@@ -1,15 +1,8 @@
-NotificationStream = require('./trello_notification_stream')
+notificationStream = require('./trello_notification_stream')
+streamingPoller = require('streaming_poller')
 
-Readable = require('readable-stream').Readable
+module.exports = (options = {}) ->
+  interval = options.interval || (1000 * 10)
+  poller = streamingPoller notificationStream, interval: interval
 
-class TrelloPollingNotificationStream extends Readable
-  constructor: (options = {}) ->
-    options.objectMode = true
-    @notifications = NotificationStream()
-    super(options)
-
-  _read: () ->
-    @notifications.read()
-
-module.exports = (options) ->
-  new TrelloPollingNotificationStream(options)
+  
