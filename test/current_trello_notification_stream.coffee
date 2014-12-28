@@ -1,9 +1,9 @@
 nock = require('nock')
-trelloNotificationStream = require('../src/trello_notification_stream')
+trelloNotificationStream = require('../src/current_trello_notification_stream')
 expect = require('chai').expect
 fs = require('fs')
 
-describe 'Reading from a TrelloNotificationStream', ->
+describe 'Reading from a CurrentTrelloNotificationStream', ->
   commentCard = JSON.parse(fs.readFileSync('./test/fixtures/notifications/commentCard.json'))
 
   mockTrelloNotifications = (body) ->

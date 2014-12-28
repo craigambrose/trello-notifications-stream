@@ -31,6 +31,6 @@
     "readable-stream": "^1.0.33",
     "streaming-poller": "0.0.1",
     "through2": "^0.6.3",
-    "unique-stream": "^1.0.0"
+    "unique-stream": "git://github.com/craigambrose/unique-stream"
   }
 }
