@@ -1,5 +1,5 @@
 notificationStream = require('./trello_notification_stream')
-streamingPoller = require('streaming_poller')
+streamingPoller = require('streaming-poller')
 
 module.exports = (options = {}) ->
   interval = options.interval || (1000 * 10)
