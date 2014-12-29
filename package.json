@@ -1,7 +1,7 @@
 {
   "name": "trello-notification-stream",
   "version": "0.1.0",
-  "description": "Get activities from trello and pass them to glint",
+  "description": "A node.js stream that emits trello notifications for a single user",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive --compilers coffee:coffee-script/register test"
