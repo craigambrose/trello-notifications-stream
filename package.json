@@ -1,6 +1,6 @@
 {
   "name": "trello-notification-stream",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A node.js stream that emits trello notifications for a single user",
   "main": "index.js",
   "scripts": {
