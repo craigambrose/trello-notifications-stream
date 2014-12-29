@@ -6,11 +6,17 @@ fs = require('fs')
 describe 'Reading from a CurrentTrelloNotificationStream', ->
   commentCard = JSON.parse(fs.readFileSync('./test/fixtures/notifications/commentCard.json'))
 
+  trelloOptions = {
+    key: 'abc',
+    token: 'f1af8514621d6338',
+    username: 'fred'
+  }
+
   mockTrelloNotifications = (body) ->
     nock.disableNetConnect()
 
     nock('https://api.trello.com')
-    .get('/1/members/craigambrose/notifications?key=6b64463b8e16f9f794d03aa7f76d39e0&token=f1af8514621d6338478ff6af019e0916589e7a117f29b75789003e1590bd056e')
+    .get('/1/members/fred/notifications?key=abc&token=f1af8514621d6338')
     .reply(200, body)
 
   onFirstStreamObject = (stream, options, handler) ->
@@ -27,10 +33,7 @@ describe 'Reading from a CurrentTrelloNotificationStream', ->
     it 'does nothing', (done) ->
       mockTrelloNotifications []
 
-      stream = trelloNotificationStream(
-        token: 'f1af8514621d6338',
-        poll_frequency: 10 * 60
-      )
+      stream = trelloNotificationStream(trelloOptions)
 
       onFirstStreamObject stream, timeout: 1000, (result) ->
         if result
@@ -42,10 +45,7 @@ describe 'Reading from a CurrentTrelloNotificationStream', ->
     it 'emit notification from stream', (done) ->
       mockTrelloNotifications [commentCard]
 
-      stream = trelloNotificationStream(
-        token: 'f1af8514621d6338',
-        poll_frequency: 10 * 60
-      )
+      stream = trelloNotificationStream(trelloOptions)
 
       onFirstStreamObject stream, timeout: 1000, (result) ->
         expect(result).to.deep.equal(commentCard)   
