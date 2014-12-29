@@ -1,6 +1,6 @@
 {
   "name": "trello-notification-stream",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Get activities from trello and pass them to glint",
   "main": "index.js",
   "scripts": {
